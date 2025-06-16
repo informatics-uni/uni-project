@@ -9,21 +9,23 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: white;
+      color: #000;
     }
 
     header {
-      background-color: rgba(46, 125, 50, 0.9);
+      background-color: rgba(46, 125, 50, 0.9); /* полупрозрачный зелёный */
       color: white;
-      padding: 10px 0;
+      padding: 8px 0;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       text-align: center;
+      font-size: 14px;
     }
 
     nav {
-      margin-top: 5px;
+      margin-top: 4px;
     }
 
     nav a {
@@ -31,7 +33,6 @@
       margin: 0 10px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 14px;
     }
 
     nav a:hover {
@@ -39,22 +40,30 @@
     }
 
     h1 {
-      font-size: 20px;
-      margin: 5px 0;
+      font-size: 16px;
+      margin: 0;
     }
 
     main {
-      padding: 120px 20px 40px 20px;
+      padding: 100px 20px 40px 20px; /* отступ сверху из-за фиксированной шапки */
       max-width: 800px;
       margin: auto;
+      background-color: white;
     }
 
     section {
       margin-bottom: 40px;
+      text-align: left;
     }
 
     h2 {
-      color: #2e7d32;
+      color: #2e7d32; /* насыщенный зелёный */
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #000;
+      margin-top: 0;
     }
   </style>
 </head>
@@ -63,7 +72,7 @@
   <header>
     <h1>Enrichment of Wikidata Architecture information</h1>
     <nav>
-      <a href="https://informatics-uni.github.io/uni-project/index.html">Main Page</a>
+      <a href="index.html">Main Page</a>
       <a href="Haru_page.html">Aruzhan's part</a>
       <a href="Olga_page.html">Olga's part</a>
       <a href="Results.html">Results</a>
