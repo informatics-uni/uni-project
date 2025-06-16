@@ -8,24 +8,53 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background-color: white;
     }
+
     header {
-      background-color: #2e7d32; /* зелёная шапка */
+      background-color: rgba(46, 125, 50, 0.9); /* полупрозрачная зелёная */
       color: white;
-      padding: 20px;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       text-align: center;
     }
+
     nav {
-      margin-top: 10px;
+      margin-top: 5px;
     }
+
     nav a {
       color: white;
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 14px;
     }
+
     nav a:hover {
       text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin: 5px 0;
+    }
+
+    main {
+      padding: 120px 20px 40px 20px; /* отступ сверху для фиксированной шапки */
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #2e7d32;
     }
   </style>
 </head>
@@ -40,21 +69,16 @@
     </nav>
   </header>
 
-  <!-- Остальная часть страницы -->
-  <main style="padding: 20px;">
-    <section id="aruzhan">
-      <h2>Aruzhan's part</h2>
-      <p>Coming soon...</p>
+  <main>
+    <section>
+      <h2>Project goal</h2>
+      <p>To analyse information present in Wikidata about Architectural objects in Italy, identify gaps within it and propose possible enrichments.</p>
     </section>
 
-    <section id="olga">
-      <h2>Olga's part</h2>
-      <p>Coming soon...</p>
-    </section>
-
-    <section id="results">
-      <h2>Results</h2>
-      <p>Coming soon...</p>
+    <section>
+      <h2>Group Members</h2>
+      <p>Aruzhan Izzatova</p>
+      <p>Olga Marchenko</p>
     </section>
   </main>
 
