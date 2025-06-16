@@ -12,13 +12,31 @@
             background: #dcf5ab;
             color: #333;
         }
-        h1 {
-            color: #3c3c3c;
-        }
-        p {
-            line-height: 1.6;
-            margin-bottom: 1em;
-        }
+          </body>
        </style>
-  </body>
 </head>
+<table style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f0f0f0; text-align: left; width: 50%;">Description of the query</th>
+      <th style="border: 1px solid #ccc; padding: 8px; background: #f0f0f0; text-align: left; width: 50%;">SPARQL Query</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ccc; padding: 8px;">
+        First of all we made a query on the information present on the topic of architecture in Wikidata.
+        <br><a href="https://example.com" target="_blank">RESULT</a>
+      </td>
+      <td style="border: 1px solid #ccc; padding: 8px; white-space: pre-wrap; font-family: monospace; font-size: 14px;">
+SELECT DISTINCT ?item ?itemLabel ?locationLabel WHERE {
+  ?item wdt:P31/wdt:P279* wd:Q839954;  # instance of (or subclass) archaeological site
+        wdt:P17 wd:Q38;                # country = Italy
+        wdt:P131 ?location.            # located in administrative unit
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "it,en". }
+}
+LIMIT 80
+      </td>
+    </tr>
+  </tbody>
+</table>
