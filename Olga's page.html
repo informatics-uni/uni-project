@@ -40,7 +40,21 @@ LIMIT 80
     </tr>
       <tr>
       <td style="border: 1px solid #ccc; padding: 8px;">
+          SELECT DISTINCT Pitem ?itemLabel ?typeLabel ?commons Category WHERE {
+{
+    ?item wdt: P31 wd: Q23413. # castles
+}
+UNION
+{   
+    ?item wdt: P31 wd:Q2977. # cathedrals
+}
           
+?item wdt: P17 wd:Q38. # country = Italy
+OPTIONAL { ?item wdt: P373 ? commons Category. } # optional: Wikimedia Commons category 
+OPTIONAL { ?item wdt: P31 ?type. }
+SERVICE wikibase:label { bd:serviceParam wikibase:language "en, it". }
+}
+LIMIT 50
   </tbody>
 </table>
 </html>
