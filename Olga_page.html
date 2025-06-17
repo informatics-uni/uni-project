@@ -133,7 +133,11 @@ LIMIT 80
 
       <tr>
         <td>
-          A second query retrieves castles and cathedrals located in Italy, optionally showing their Commons categories and types.
+          The second query retrieves castles and cathedrals located in Italy, optionally showing their Commons categories and types.
+        <br><br>RESULT:
+          <iframe style="width: 80vw; height: 50vh; border: none;" src="https://query.wikidata.org/embed.html#SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FtypeLabel%20%3FcommonsCategory%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ23413.%20%20%23%20castles%0A%20%20%7D%0A%20%20UNION%0A%20%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ2977.%20%20%20%23%20cathedrals%0A%20%20%7D%0A%20%20%3Fitem%20wdt%3AP17%20wd%3AQ38.%20%20%20%20%20%20%20%23%20country%20%3D%20Italy%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP373%20%3FcommonsCategory.%20%7D%20%20%23%20Wikimedia%20Commons%20category%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP31%20%3Ftype.%20%7D%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%2Cit%22.%20%7D%0A%7D%0ALIMIT%2050" 
+            referrerpolicy="origin" 
+            sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
         </td>
         <td>
 <pre>
@@ -155,9 +159,35 @@ LIMIT 50
         </td>
       </tr>
 
-      <!-- 3 пустые строки -->
       <tr>
-        <td></td>
+        <td>
+          Описание
+        
+        </td>
+        <pre>
+          SELECT DISTINCT ?item ?itemLabel ?typeLabel WHERE {
+  {
+    ?item wdt:P31 wd:Q24354.  # theatres
+  }
+  UNION
+  {
+    ?item wdt:P31 wd:Q2977.   # cathedrals
+  }
+
+  ?item wdt:P17 wd:Q38.       # country = Italy
+
+  OPTIONAL { ?item wdt:P31 ?type. }
+
+  ?item rdfs:label ?label .
+  FILTER (LANG(?label) = "it")
+  FILTER(REGEX(?label, "Teatro|Duomo", "i"))
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY ?itemLabel
+LIMIT 50
+
+        </pre>
         <td></td>
       </tr>
       <tr>
