@@ -166,6 +166,12 @@ LIMIT 50
       <tr>
         <td>
           This query filters items labelled as "Teatro" or "Duomo" in Italian.
+          <br></br> RESULT:
+          <div style="max-width: 100%; overflow-x: auto;">
+          <iframe style="width: 100%; max-width: 600px; height: 300px; border: none;"
+          src="https://query.wikidata.org/embed.html#SELECT%20DISTINCT%20%3Fitem%20%3FitemLabel%20%3FtypeLabel%20WHERE%20%7B%0A%20%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ24354.%20%20%23%20theatres%0A%20%20%7D%0A%20%20UNION%0A%20%20%7B%0A%20%20%20%20%3Fitem%20wdt%3AP31%20wd%3AQ2977.%20%20%20%23%20cathedrals%0A%20%20%7D%0A%0A%20%20%3Fitem%20wdt%3AP17%20wd%3AQ38.%20%20%20%20%20%20%20%23%20country%20%3D%20Italy%0A%0A%20%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP31%20%3Ftype.%20%7D%0A%0A%20%20%3Fitem%20rdfs%3Alabel%20%3Flabel%20.%0A%20%20FILTER%20(LANG(%3Flabel)%20%3D%20%22it%22)%0A%20%20FILTER(REGEX(%3Flabel%2C%20%22Teatro%7CDuomo%22%2C%20%22i%22))%0A%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%0AORDER%20BY%20%3FitemLabel%0ALIMIT%2050%0A" 
+                      referrerpolicy="origin" 
+                      sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
         </td>
         <td>
 <pre>
@@ -205,13 +211,26 @@ LIMIT 50
   <table>
     <thead>
       <tr>
-        <th style="width: 33%;">Question</th>
+        <th style="width: 34%;">Question</th>
         <th style="width: 33%;">ChatGPT</th>
-        <th style="width: 34%;">Gemini</th>
+        <th style="width: 33%;">Gemini</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td></td><td></td><td></td></tr>
+      <tr>
+        <td>
+        Who was the ruler when the Theatre of Marcellus was built? 
+
+        ZERO-SHOT PROMPTING
+      </td>
+        <td>
+          The Theatre of Marcellus was constructed during the late Roman Republic period. It was initiated by Julius Caesar and completed under Emperor Augustus.
+        </td>
+        <td>
+          The Theatre of Marcellus was begun by Julius Caesar, but it was completed and dedicated by Augustus in 13 BC. Augustus named the theatre in memory of his nephew, Marcus Claudius Marcellus.
+        </td>
+      </tr>
+      
       <tr><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td></tr>
     </tbody>
