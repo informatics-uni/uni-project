@@ -219,7 +219,7 @@ LIMIT 50
     <tbody>
       <tr>
         <td>
-        Who was the ruler when the Theatre of Marcellus was built? <br>
+        Who was the ruler when the Theatre of Marcellus was built? <br><br>
         ZERO-SHOT PROMPTING
       </td>
         <td>
@@ -229,8 +229,39 @@ LIMIT 50
           The Theatre of Marcellus was begun by Julius Caesar, but it was completed and dedicated by Augustus in 13 BC. Augustus named the theatre in memory of his nephew, Marcus Claudius Marcellus.
         </td>
       </tr>
+      In the result of comparing the two answers from the LLMs it can be noted that they both give quite the same information. They both mention Julius Caesar as the initiator of the constuction, which indeed might be a fair point to be noted. The difference in answers lies in the additional information the LLMs provide. They both mention the approximate date (<i>the late Roman Republic period</i> – ChatGPT; <i>13 BC</i> – Gemini), and also Gemini adds information on the naming of the theatre. It was not the aim of the zero-shot prompting to retrieve this information, it is thus excessive.
+<br>
+      <table>
+    <thead>
+      <tr>
+        <th style="width: 34%;">Question</th>
+        <th style="width: 33%;">ChatGPT</th>
+        <th style="width: 33%;">Gemini</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Q: Who was the ruler when the Theatre of Marcellus was built?  
+A: The Theatre of Marcellus was constructed during the late Roman Republic, and it was completed under the rule of Julius Caesar and Augustus.
+
+Q: Who was the ruler when the Theatre of Pompey was built?  
+A: The Theatre of Pompey was built during the late Roman Republic, specifically commissioned by Pompey the Great.
+
+Q: Who was the ruler when the Roman Theatre of Saepinum was built?  
+A:
+<br> 
+<br>
+FEW-SHOT PROMPTING
+ </td>
+        <td>
+          The Roman Theatre of Saepinum was built during the reign of Emperor Augustus in the early 1st century AD.
+        </td>
+        <td>
+          The Roman Theatre of Saepinum was built during the Julio-Claudian period (early 1st century CE), under emperors like Augustus and Tiberius.
+        </td>
+      </tr>
       
-      <tr><td></td><td></td><td></td></tr>
       <tr><td></td><td></td><td></td></tr>
     </tbody>
   </table>
